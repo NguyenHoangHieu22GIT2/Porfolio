@@ -1,3 +1,4 @@
+"use client";
 import { Article } from "@/components/Articles/Article/Article";
 import { Layout } from "@/components/Layout/Layout";
 import { Container } from "@/components/ui/Container";
