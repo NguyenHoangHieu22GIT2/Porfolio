@@ -5,7 +5,7 @@ import { Layout } from "@/components/Layout/Layout";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/button";
 import { useUserSession } from "@/utils/store";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function createArticlePage() {
@@ -15,9 +15,9 @@ export default function createArticlePage() {
   function onChangeMarkdown(markdown: string) {
     setMarkdown(markdown);
   }
-  if (!bossId) {
-    return route.replace("/");
-  }
+  useEffect(() => {
+    if (bossId) route.replace("/");
+  }, [bossId]);
   return (
     <Layout>
       <Container>
